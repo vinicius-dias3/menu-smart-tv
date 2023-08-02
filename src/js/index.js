@@ -24,39 +24,24 @@ arrayApps.forEach((app, index) => {
 
             const elementoMaiorClick = arrayApps[indiceMaiorClick]
             // console.log(elementoMaiorClick) // TESTANDO - OK
-            // if(indiceMaiorClick){
+            //O PROBLEMA ESTÁ A PARTIR DAQUI
                 arrayApps.splice(indiceMaiorClick, 1);
                 arrayApps.unshift(elementoMaiorClick);
                 console.log(arrayApps);
-            // }
                 
-                // arrayApps.forEach((app) => {
-                //     paiDaArray.appendChild(app);
-                // });
         }
     });
 });
 
+/*//código para entender melhor o conceito de mecher na array
+const veiculos = ['carro', 'moto', 'barco', 'caminhão', 'bicicleta']
+console.log(veiculos)
+const barco = 'barco'
+const indiceBarco = veiculos.indexOf(barco)
+console.log(indiceBarco)
 
-
-//maneira diferente de escrever a mesma lógica.
-// const apps = document.querySelectorAll('.app')
-// let appsArray = [...apps]
-// let maiorClick = 0
-// let indiceMaiorClick = -1
-
-// for (let i = 0; i < appsArray.length; i++){
-//     const app = appsArray[i];
-//     app.dataset.contador = 0
-
-//     app.addEventListener('click', (event)=> {
-//         event.preventDefault()
-//         app.dataset.contador++
-    
-//         if(app.dataset.contador > maiorClick){
-//             maiorClick = app.dataset.contador;
-//             indiceMaiorClick = i;
-//             console.log(`O maior clique agora é: ${maiorClick} do indice ${indiceMaiorClick}`)
-//         }
-//     })
-// }
+    if(indiceBarco){
+        veiculos.splice(indiceBarco, 1)
+        veiculos.unshift(barco)
+    }
+    console.log(veiculos)*/
