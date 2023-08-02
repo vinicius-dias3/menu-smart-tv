@@ -1,3 +1,10 @@
+
+
+
+
+
+
+
 const apps = document.querySelectorAll('.app');
 let arrayApps = Array.from(apps);
 let maiorClick = 0;
@@ -6,7 +13,6 @@ const paiDaArray = document.querySelector('.main');
 console.log(arrayApps)
 
 arrayApps.forEach((app, index) => {
-    // app.dataset.index = index; //confirmar esta linha
     let contadorDeClick = parseInt(app.dataset.contador); //ok. está pegando o contador do html
 
     app.addEventListener('click', (event) => {
@@ -25,10 +31,17 @@ arrayApps.forEach((app, index) => {
             const elementoMaiorClick = arrayApps[indiceMaiorClick]
             // console.log(elementoMaiorClick) // TESTANDO - OK
             //O PROBLEMA ESTÁ A PARTIR DAQUI
-                arrayApps.splice(indiceMaiorClick, 1);
-                arrayApps.unshift(elementoMaiorClick);
-                console.log(arrayApps);
-                
+
+            arrayApps.sort((a, b) => {
+                const contadorA = parseInt(a.dataset.contador)
+                const contadorB = parseInt(b.dataset.contador)
+                return contadorB - contadorA
+            })
+            // arrayApps.splice(indiceMaiorClick, 1);
+            // arrayApps.unshift(elementoMaiorClick);
+            // console.log(arrayApps);
+            
+            console.log(arrayApps)
         }
     });
 });
