@@ -47,16 +47,16 @@ main {
     margin: 0 35px;
 }
 
-.botao {
+.icone {
     border: 1px solid grey;
     border-radius: 20px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     transition: .3s ease;
 }
 
-.botao:hover {
+.icone:hover {
     box-shadow: rgb(3, 3, 3) 0px 20px 30px -10px;
-    animation: crescer .5s ease-in-out;
+    animation: crescer .4s ease-in-out;
 }
 
 @keyframes crescer{

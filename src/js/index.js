@@ -1,50 +1,33 @@
-
-
-
-
-
-
-
-const apps = document.querySelectorAll('.app');
-let arrayApps = Array.from(apps);
-let maiorClick = 0;
-let indiceMaiorClick = 0;
+let apps = document.querySelectorAll('.app')
+let arrayApps = []
+let maiorClick = 0
+let indiceMaiorClick = -1; //testar com 0 como no outro documento
 const paiDaArray = document.querySelector('.main');
-console.log(arrayApps)
+let contadorDeClick = 0
 
-arrayApps.forEach((app, index) => {
-    let contadorDeClick = parseInt(app.dataset.contador); //ok. está pegando o contador do html
 
-    app.addEventListener('click', (event) => {
-        event.preventDefault();
-        contadorDeClick++;
-        app.dataset.index = contadorDeClick
-        // console.log(arrayApps[4], parseInt(app.dataset.index))//pra saber se o contador de click funciona
-        //daqui pra cima, tudo funcionando
+apps.forEach((app)=> {
+    let nomeDaClasse = Array.from(app.classList)
+    arrayApps.push({element: app, nome: nomeDaClasse, contadorDeClick: 0})
+})
 
-        if (contadorDeClick > maiorClick) {
-            maiorClick = contadorDeClick;
-            indiceMaiorClick = index;
-            // console.log(indiceMaiorClick) // testando - OK
-            // console.log(`O maior clique agora é: ${maiorClick} do índice ${indiceMaiorClick}`);
+arrayApps.forEach((app, index)=> {
+    app.element.addEventListener('click', (event)=> {
+        event.preventDefault()
+        app.contadorDeClick++ //acessando a propriedade do objeto da array - OK
 
-            const elementoMaiorClick = arrayApps[indiceMaiorClick]
-            // console.log(elementoMaiorClick) // TESTANDO - OK
-            //O PROBLEMA ESTÁ A PARTIR DAQUI
-
-            arrayApps.sort((a, b) => {
-                const contadorA = parseInt(a.dataset.contador)
-                const contadorB = parseInt(b.dataset.contador)
-                return contadorB - contadorA
-            })
-            // arrayApps.splice(indiceMaiorClick, 1);
-            // arrayApps.unshift(elementoMaiorClick);
-            // console.log(arrayApps);
+        if(app.contadorDeClick > maiorClick){
+            maiorClick = app.contadorDeClick
+            indiceMaiorClick = index 
+            console.log('deu true!!!', 'o índice do maior click foi: ', indiceMaiorClick)
             
-            console.log(arrayApps)
+        }else{
+            console.log('caiu no else')
         }
-    });
-});
+        arrayApps.sort((a, b)=> b.contadorDeClick - a.contadorDeClick)
+        console.log(arrayApps)
+    })
+})
 
 /*//código para entender melhor o conceito de mecher na array
 const veiculos = ['carro', 'moto', 'barco', 'caminhão', 'bicicleta']
