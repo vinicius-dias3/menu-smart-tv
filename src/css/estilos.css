@@ -38,7 +38,7 @@ body {
 }
 
 .main {
-    min-height: 500px;
+    min-height: 450px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -48,6 +48,7 @@ body {
 }
 
 .icone {
+    margin-top: 0;
     border: 1px solid grey;
     border-radius: 20px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -74,9 +75,8 @@ body {
 @media(max-width: 769px){
     .main{max-width: 480px;}
 
-    .main .app{margin-top: 40px;}
-
     .main .app .icone{
+        margin-top: 40px;
         width: 117px;
         height: 117px;
     }

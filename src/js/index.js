@@ -1,7 +1,7 @@
 let apps = document.querySelectorAll('.app')
 let arrayApps = []
 let maiorClick = 0
-let indiceMaiorClick = -1; //testar com 0 como no outro documento
+let indiceMaiorClick = -1;
 const paiDaArray = document.querySelector('.main');
 let contadorDeClick = 0
 
@@ -19,7 +19,7 @@ arrayApps.forEach((app, index)=> {
         if(app.contadorDeClick > maiorClick){
             maiorClick = app.contadorDeClick
             indiceMaiorClick = index 
-            console.log('deu true!!!', 'o índice do maior click foi: ', indiceMaiorClick)
+            // console.log('deu true!!!', 'o índice do maior click foi: ', indiceMaiorClick) //testando... - OK
         }
 
         arrayApps.sort((a, b)=> b.contadorDeClick - a.contadorDeClick)
