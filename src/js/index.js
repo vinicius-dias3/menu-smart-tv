@@ -20,12 +20,12 @@ arrayApps.forEach((app, index)=> {
             maiorClick = app.contadorDeClick
             indiceMaiorClick = index 
             console.log('deu true!!!', 'o índice do maior click foi: ', indiceMaiorClick)
-            
-        }else{
-            console.log('caiu no else')
         }
+
         arrayApps.sort((a, b)=> b.contadorDeClick - a.contadorDeClick)
         console.log(arrayApps)
+        paiDaArray.innerHTML = ''
+        arrayApps.forEach((element)=> paiDaArray.appendChild(element.element))
     })
 })
 

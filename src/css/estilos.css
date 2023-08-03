@@ -12,7 +12,7 @@ body {
     background: rgb(19, 19, 19);
 }
 
-header {
+.header {
     min-height: 100px;
     display: flex;
     justify-content: center;
@@ -23,13 +23,13 @@ header {
     box-shadow: inset 3px -10px 14px 2px rgba(0, 0, 0, 0.6);
 }
 
-header h1 {
+.header .titulo {
     margin-top: 10px;
     text-shadow: 1px 2px 7px rgba(0, 0, 0, 0.418) ;
     color: #6B6C6E;
 }
 
-header .logo{
+.header .logo{
     margin-top: 2px;
     width: 50px;
     height: 50px;
@@ -37,14 +37,14 @@ header .logo{
     border-radius: 40%;
 }
 
-main {
+.main {
     min-height: 500px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     gap: 8px;
-    margin: 0 35px;
+    margin: 0 auto;
 }
 
 .icone {
@@ -71,37 +71,17 @@ main {
     }
 }
 
+@media(max-width: 769px){
+    .main{max-width: 480px;}
 
-/* // dispositivos extra pequenos (celulares em posição porta retrato, menores do que 576px) */
-/* @media (max-width: 576px) { */
+    .main .app{margin-top: 40px;}
 
-
-@media(max-width: 725px){
-    main{
-        max-width: 550px;
+    .main .app .icone{
+        width: 117px;
+        height: 117px;
     }
 }
 
-/* @media (max-width: 768px) {
-    main {
-        height: 500px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 6px;
-        margin: 0 35px;
-    }
-
-    .botao {
-        border: 1px solid grey;
-        border-radius: 18px;
-        transition: 0.4s ease;
-        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-        transform: scale(0.6);
-    }
-
-    .botao:hover {
-        transform: scale(0.8);
-        transform: rotate(8deg);
-    }
-} */
+@media(max-width: 375px){
+    .main{max-width: 360px;}
+}
